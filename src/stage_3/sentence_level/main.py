@@ -164,7 +164,7 @@ def train(config, model, train_dataloader, dev_dataloader, test_dataloader, dual
             model.training = False
             model.eval()
 
-            if "semeval" in config.trainer.dataset or "tacred" in config.trainer.dataset:
+            if "semeval" in config.trainer.dataset or "tacred" in config.trainer.dataset or "semeval" in config.trainer.dataset:
                 eval_func = eval_F1
             elif config.trainer.dataset == "wiki80" or config.trainer.dataset == "chemprot":
                 eval_func = eval_ACC
